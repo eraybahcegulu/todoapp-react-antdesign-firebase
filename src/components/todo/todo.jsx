@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Dashboard from '../dashboard/dashboard';
+import Home from '../home/home';
 import { Button, Col, Card, Space, Table, Input, Checkbox } from 'antd';
 import { PlusOutlined, CloseOutlined, LoadingOutlined } from '@ant-design/icons';
 import { addTodo, deleteTodo, updateTodoStatus } from '../../services/todoService';
@@ -83,7 +83,7 @@ function Todo() {
             align: 'center',
         },
         {
-            title: 'Action',
+            title: '',
             key: 'action',
             align: 'center',
             render: (task) => (
@@ -142,9 +142,9 @@ function Todo() {
 
     return (
         <div>
-            <Dashboard />
+            <Home></Home>
             <Col xs={{ span: 24, offset: 0 }} sm={{ span: 24, offset: 0 }} md={{ span: 22, offset: 1 }} lg={{ span: 12, offset: 6 }} xl={{ span: 12, offset: 6 }} >
-                <Card className='mt-10' title="Todo">
+                <Card className='mt-10' title="My Todo List">
                     <Space.Compact>
                         <Input maxLength={20} placeholder='New Todo' value={newTask} onChange={(e) => setNewTask(e.target.value)} />
                         <Button icon={<PlusOutlined />} onClick={handleAddTask}>
@@ -157,7 +157,7 @@ function Todo() {
                                 dataSource={dataSource}
                                 pagination={false} scroll={{ y: 400 }}
                                 rowKey="key"
-                                components={{body: {row: Row,},}} />
+                                components={{ body: { row: Row, }, }} />
                         </SortableContext>
                     </DndContext>
                 </Card>

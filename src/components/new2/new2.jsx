@@ -1,10 +1,10 @@
-import Dashboard from '../dashboard/dashboard';
+import Home from '../home/home';
 import { Col, Card } from 'antd';
 function New2() {
 
     return (
         <div>
-            <Dashboard></Dashboard>
+            <Home></Home>
             <Col span={12} offset={6}>
                 <Card className='mt-10' title="New2">
                     <Card type="inner" title="Inner Card title" extra={<a href="#">More</a>}>
